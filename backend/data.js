@@ -1,7 +1,22 @@
+import bcrypt from "bcryptjs";
+
 const data = {
+  users: [
+    {
+      name: "a",
+      email: "a@gmail.com",
+      password: bcrypt.hashSync("123456"),
+      isAdmin: true,
+    },
+    {
+      name: "b",
+      email: "b@gmail.com",
+      password: bcrypt.hashSync("123456"),
+      isAdmin: false,
+    },
+  ],
   product: [
     {
-      _id: "1",
       name: "Adidas shoe",
       slug: "adidas-shoe",
       category: "Shoes",
@@ -14,7 +29,6 @@ const data = {
       description: "an adidas shoe",
     },
     {
-      _id: "2",
       name: "Puma shoe",
       slug: "puma-shoe",
       category: "Shoes",
@@ -27,7 +41,6 @@ const data = {
       description: "a puma shoe",
     },
     {
-      _id: "3",
       name: "Nike short 1",
       slug: "nike-short-1",
       category: "Shorts",
@@ -40,13 +53,12 @@ const data = {
       description: "a Nike short",
     },
     {
-      _id: "4",
       name: "Nike short 2",
       slug: "nike-short-2",
       category: "Shorts",
       image: "/images/nike-short-black.jpg",
       price: 90,
-      countInStock: 10,
+      countInStock: 0,
       brand: "Nike",
       rating: 4.2,
       numReviews: 10,
